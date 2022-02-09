@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="エンジン関連">
+      <UniqueIdentifier>{a3e6d2d4-c399-4376-9943-4e57c94f53b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト">
+      <UniqueIdentifier>{4540d8b5-f550-4a6a-b98f-4c5baf4e5229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="シェーダーファイル">
+      <UniqueIdentifier>{a5b57817-751c-4901-a228-f0d327baad81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="パーティクル">
+      <UniqueIdentifier>{19f5a0e1-aa22-4825-a175-18ee290075b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="シーン">
+      <UniqueIdentifier>{5401bbf6-e51b-45b0-9fb5-84228de0b90c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\Player">
+      <UniqueIdentifier>{de7f8d5c-257a-4726-8b9f-f3a0e90e2323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\Enemy">
+      <UniqueIdentifier>{701505d2-fdd7-444e-9506-be1f39c2dff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\LinkObject">
+      <UniqueIdentifier>{07a0a5f0-e8e3-4894-858d-1e62b5b3e740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\SpherePlant">
+      <UniqueIdentifier>{a1190da6-6c10-46b3-98c4-12e2078b7131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\BoundObject">
+      <UniqueIdentifier>{8ab7cd71-9a3b-4ee1-b6e9-13dff3790b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\Select">
+      <UniqueIdentifier>{8f67bbd3-0398-474d-878a-b444cf213103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ゲームオブジェクト\Wall">
+      <UniqueIdentifier>{fbc36082-cd36-4787-bbaf-c1a9a1eb0fe8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Game\GameObject.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject\Ball.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject\Bomb.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject\Cutter.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject\Goal.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject\RiseObject.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject\Back.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject\Opening.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject\SceneObject.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\Player.cpp">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\PlayerEmitter.cpp">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\Tail.cpp">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\TailManager.cpp">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Bullet.cpp">
+      <Filter>ゲームオブジェクト\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\ShootEnemy.cpp">
+      <Filter>ゲームオブジェクト\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkObject\LinkObject.cpp">
+      <Filter>ゲームオブジェクト\LinkObject</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkObject\LinkObjectManager.cpp">
+      <Filter>ゲームオブジェクト\LinkObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SpherePlant\SpherePlant.cpp">
+      <Filter>ゲームオブジェクト\SpherePlant</Filter>
+    </ClCompile>
+    <ClCompile Include="SpherePlant\SpherePlantManager.cpp">
+      <Filter>ゲームオブジェクト\SpherePlant</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundObject\BoundObject.cpp">
+      <Filter>ゲームオブジェクト\BoundObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundObject\BoundObjectManager.cpp">
+      <Filter>ゲームオブジェクト\BoundObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Select\Result.cpp">
+      <Filter>ゲームオブジェクト\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="Select\SelectManager.cpp">
+      <Filter>ゲームオブジェクト\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="Select\Select.cpp">
+      <Filter>ゲームオブジェクト\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall\TileBlock.cpp">
+      <Filter>ゲームオブジェクト\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall\Triangle.cpp">
+      <Filter>ゲームオブジェクト\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall\Wall.cpp">
+      <Filter>ゲームオブジェクト\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\DirectXGame.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameBase.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GamePlayScene.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\ResultScene.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SelectScene.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\TitleScene.cpp">
+      <Filter>シーン</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ChargeParticle.cpp">
+      <Filter>パーティクル</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\FireParticle.cpp">
+      <Filter>パーティクル</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\HitParticle.cpp">
+      <Filter>パーティクル</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\Particle.cpp">
+      <Filter>パーティクル</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\ParticleManager.cpp">
+      <Filter>パーティクル</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle\TouchParticle.cpp">
+      <Filter>パーティクル</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\main.cpp" />
+    <ClCompile Include="Game\Map.cpp" />
+    <ClCompile Include="Game\Vector.cpp" />
+    <ClCompile Include="DirectXEngine\Camera.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\DirectXCommon.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Gaussian.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\GPUParticle.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Input.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Light.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Loader.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Model.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Object3d.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\PostEffect.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\SoundManager.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\Sprite.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\TextureManager.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\WinApp.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXEngine\GamePad.cpp">
+      <Filter>エンジン関連</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject\RiseUI.cpp">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game\GameObject.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject\Ball.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject\Bomb.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject\Cutter.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject\Goal.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject\RiseObject.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject\Back.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject\Opening.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\Player.h">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\PlayerEmitter.h">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\Tail.h">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\TailManager.h">
+      <Filter>ゲームオブジェクト\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Bullet.h">
+      <Filter>ゲームオブジェクト\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\ShootEnemy.h">
+      <Filter>ゲームオブジェクト\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkObject\LinkObject.h">
+      <Filter>ゲームオブジェクト\LinkObject</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkObject\LinkObjectManager.h">
+      <Filter>ゲームオブジェクト\LinkObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SpherePlant\SpherePlant.h">
+      <Filter>ゲームオブジェクト\SpherePlant</Filter>
+    </ClInclude>
+    <ClInclude Include="SpherePlant\SpherePlantManager.h">
+      <Filter>ゲームオブジェクト\SpherePlant</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundObject\BoundObject.h">
+      <Filter>ゲームオブジェクト\BoundObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundObject\BoundObjectManager.h">
+      <Filter>ゲームオブジェクト\BoundObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Select\Result.h">
+      <Filter>ゲームオブジェクト\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="Select\Select.h">
+      <Filter>ゲームオブジェクト\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="Select\SelectManager.h">
+      <Filter>ゲームオブジェクト\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall\Wall.h">
+      <Filter>ゲームオブジェクト\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall\TileBlock.h">
+      <Filter>ゲームオブジェクト\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall\Triangle.h">
+      <Filter>ゲームオブジェクト\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\DirectXGame.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameBase.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GamePlayScene.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\ResultScene.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SelectScene.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TitleScene.h">
+      <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\ChargeParticle.h">
+      <Filter>パーティクル</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\FireParticle.h">
+      <Filter>パーティクル</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\HitParticle.h">
+      <Filter>パーティクル</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\Particle.h">
+      <Filter>パーティクル</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\ParticleManager.h">
+      <Filter>パーティクル</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle\TouchParticle.h">
+      <Filter>パーティクル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Collision.h" />
+    <ClInclude Include="Game\Map.h" />
+    <ClInclude Include="Game\Vector.h" />
+    <ClInclude Include="DirectXEngine\Camera.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\DirectionalLight.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\DirectXCommon.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Gaussian.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\GPUParticle.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Input.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Light.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Loader.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Model.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Object3d.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\PostEffect.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\SoundManager.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\Sprite.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\TextureManager.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\WinApp.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXEngine\GamePad.h">
+      <Filter>エンジン関連</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject\SceneObject.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject\RiseUI.h">
+      <Filter>ゲームオブジェクト</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\BasicGS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BasicPS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BasicVS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\PostEffectTestPS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\PostEffectTestVS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\SpritePixelShader.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\SpriteVertexShader.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\ParticleGS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\ParticlePS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\ParticleVS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BasicDS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\BasicHS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\NormalColorPS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\GaussianVS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\GaussianPS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\ShootEnemyParticleGS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\HitParticleGS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\NoneShadowPS.hlsl">
+      <Filter>シェーダーファイル</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\Basic.hlsli">
+      <Filter>シェーダーファイル</Filter>
+    </None>
+    <None Include="shaders\PostEffectTest.hlsli">
+      <Filter>シェーダーファイル</Filter>
+    </None>
+    <None Include="shaders\SpriteShaderHeader.hlsli">
+      <Filter>シェーダーファイル</Filter>
+    </None>
+    <None Include="shaders\Particle.hlsli">
+      <Filter>シェーダーファイル</Filter>
+    </None>
+    <None Include="shaders\Gaussian.hlsli">
+      <Filter>シェーダーファイル</Filter>
+    </None>
+  </ItemGroup>
+</Project>
