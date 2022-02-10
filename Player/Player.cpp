@@ -153,17 +153,17 @@ InputNum Player::GetInput()
 {
 	if (input->Push(DIK_LEFT) || pad->GetLStickX() < 0.0f)
 	{
-		return LEFT;
+		return InputNum::LEFT;
 	}
 	if (input->Push(DIK_RIGHT) || pad->GetLStickX() > 0.0f)
 	{
-		return RIGHT;
+		return InputNum::RIGHT;
 	}
 	if (input->Push(DIK_UP) || pad->Push(XINPUT_A))
 	{
-		return UP;
+		return InputNum::UP;
 	}
-		return NONE;
+		return InputNum::NONE;
 }
 
 void Player::SetDead(bool b)

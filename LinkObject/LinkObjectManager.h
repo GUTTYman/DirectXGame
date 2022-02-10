@@ -16,7 +16,7 @@ public:
 	void Update();
 	void Draw(DirectXCommon* dxCommon);
 	//Getter
-	int GetLinkSize() { return object.size(); }
+	int GetLinkSize() { return int(object.size()); }
 	std::vector<LinkObject*>GetLinkObject() { return object; }
 	//Setter
 	void SetTarget(Vector3 aPos);

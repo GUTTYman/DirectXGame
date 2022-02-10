@@ -21,7 +21,7 @@ void TailManager::Initialize(DirectXCommon* dxCommon, TextureManager* textureMan
 	for (int i = 0; i < size; i++)
 	{
 		object[i]->Initialize(dxCommon, textureManager);
-		object[i]->SetSinAngle(0-i);
+		object[i]->SetSinAngle(float(0-i));
 		LerpColor(Vector3(0.2f, 1.0f, 0.2f), Vector3(0.2f, 0.2f, 1));
 	}
 	SetScale(Vector3(firstSize, firstSize, firstSize));

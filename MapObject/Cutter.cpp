@@ -15,7 +15,7 @@ void Cutter::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 
 	object->Initialize(modelLoader->GetModel(CUTTER));
 
-	float rScale= rand() % 5 + 3;
+	float rScale= (float)(rand() % 5 + 3);
 	liveFlag = true;
 	scale = Vector3(rScale, rScale, rScale); 
 	color = Vector3();

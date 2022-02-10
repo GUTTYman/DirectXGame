@@ -18,6 +18,7 @@ PlayerEmitter::~PlayerEmitter()
 void PlayerEmitter::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 {
 	liveFlag = false;
+	rest = 0;
 	for (int i = 0; i < object.size(); ++i)
 	{
 		object[i]->Initialize(dxCommon, textureManager);
@@ -104,12 +105,12 @@ void PlayerEmitter::Rise(Vector3 position, DirectXCommon* dxCommon, TextureManag
 		if (!object[i]->GetLiveFlag())
 		{
 			object[i]->SetLiveFlag(true);
-			float rx = rand() % 100 - 50;
-			float ry = rand() % 100 - 50;
+			float rx = float(rand() % 100 - 50);
+			float ry = float(rand() % 100 - 50);
 			object[i]->SetPosition(position + Vector3(rx / 10.0f, ry / 10.0f, 0));
 			object[i]->SetVelocity(object[TopPlayer()]->GetVelocity());
 			//プレイヤーとのサイズ指定
-			float rs = rand() % 20 + 10;
+			float rs = float(rand() % 20 + 10);
 			object[i]->SetScale(Vector3(rs / 10.0f, rs / 10.0f, rs / 10.0f));
 			break;
 		}
@@ -121,8 +122,8 @@ void PlayerEmitter::SetPosition(Vector3 position)
 	object[0]->SetPosition(position);
 	for (int i = 1; i < object.size(); i++)
 	{
-		float rx = rand() % 100 - 50;
-		float ry = rand() % 100 - 50;
+		float rx = float(rand() % 100 - 50);
+		float ry = float(rand() % 100 - 50);
 		object[i]->SetPosition(position - Vector3(rx / 100.0f, ry / 100.0f, 0));	}
 }
 void PlayerEmitter::SetVelocity(Vector3 velocity)

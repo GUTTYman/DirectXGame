@@ -161,7 +161,7 @@ void Opening::Draw(DirectXCommon* dxCommon)
 void Opening::Reset()
 {
 	time = 0;
-	spawnCount = 0.0f;
+	spawnCount = 0;
 	step = OpenStep::START;
 	normalLength = 0.0f;
 }

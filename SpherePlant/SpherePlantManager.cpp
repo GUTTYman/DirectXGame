@@ -22,7 +22,7 @@ void SpherePlantManager::Initialize(DirectXCommon* dxCommon, TextureManager* tex
 	{
 		object[i]->Initialize(dxCommon, textureManager);
 		object[i]->SetScale(easeOut(Vector3(firstSize + 1.5f , firstSize + 1.5f, firstSize + 1.5f), Vector3(0.3f, 0.3f, 0.3f), (float)i / size));
-		object[i]->SetSinAngle(0-i);
+		object[i]->SetSinAngle(float(0-i));
 		LarpColor(Vector3(), Vector3( 0.2f, 1.0f, 0.2f));
 
 	}

@@ -36,11 +36,11 @@ void Back::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 		//カラーセット
 		selectBackLeft[i]->SetColor(Vector3(0.8f, 0.9f, 0.8f));
 		//スケールランダム
-		float r = rand() % 20;
+		float r = float(rand() % 20);
 		selectBackLeft[i]->SetScale(Vector3(r, r, r) + Vector3(6, 6, 6));
 		selectVecl[i] = Vector3((20 - r) / 10.0f, 0, 0);
 		//初期位置
-		selectBackLeft[i]->SetPosition(Vector3(rand() % 190-190, rand() % 150 - 75, 100));
+		selectBackLeft[i]->SetPosition(Vector3(float(rand() % 190-190), float(rand() % 150 - 75), 100.0f));
 
 	}
 	for (int i = 0; i < selectBackRight.size(); i++)
@@ -51,10 +51,10 @@ void Back::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 		//カラーセット
 		selectBackRight[i]->SetColor(Vector3(0.8f, 0.9f, 0.8f));
 		//スケールランダム
-		float r = rand() % 20;
+		float r = float(rand() % 20);
 		selectBackRight[i]->SetScale(Vector3(r, r, r) + Vector3(6, 6, 6));
 		//初期位置
-		selectBackRight[i]->SetPosition(Vector3(rand() % 190, rand() % 150 - 75, 100));
+		selectBackRight[i]->SetPosition(Vector3(float(rand() % 190), float(rand() % 150 - 75), 100.0f));
 
 	}
 

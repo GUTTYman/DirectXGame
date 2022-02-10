@@ -16,7 +16,7 @@ BoundObject::~BoundObject()
 void BoundObject::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 {
 	object->Initialize(modelLoader->GetModel(KINOKO));
-	float randScale = rand() % 90;
+	float randScale = float(rand() % 90);
 	scale = Vector3(randScale / 100.0f + 0.2f, randScale / 100.0f + 0.5f, randScale / 100.0f + 0.5f);
 	color = Vector3(0.0f,0.2f,0.0f);
 	target = Vector3(10.0f, 0.0f, 0.0f);

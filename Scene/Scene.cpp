@@ -64,14 +64,14 @@ Scene::Scene()
 	//球体植物オブジェクト
 	for (int i = 0; i < spherePlant.size(); i++)
 	{
-		float size = rand() % 10;
-		spherePlant[i] = new SpherePlantManager(size + 5);
+		float size = float(rand() % 10);
+		spherePlant[i] = new SpherePlantManager((int)size + 5);
 	}
 	//下方向球体植物オブジェクト
 	for (int i = 0; i < spherePlantD.size(); i++)
 	{
-		float size = rand() % 15;
-		spherePlantD[i] = new SpherePlantManager(size + 5);
+		float size = float(rand() % 15);
+		spherePlantD[i] = new SpherePlantManager((int)size + 5);
 	}
 	//ブロックオブジェクト
 	for (int i = 0; i < block.size(); i++){block[i] = new TileBlock();}
@@ -159,13 +159,13 @@ void Scene::Initialize()
 	//球体植物オブジェクト
 	for (int i = 0; i < spherePlant.size(); i++)
 	{
-		float size = rand() % 10;
+		float size = float(rand() % 10);
 		spherePlant[i]->Initialize(dxCommon, textureManager, size / 10.0f + 1.5f);
 	}
 	//下方向球体植物オブジェクト
 	for (int i = 0; i < spherePlantD.size(); i++)
 	{
-		float size = rand() % 20;
+		float size = float(rand() % 20);
 		spherePlantD[i]->Initialize(dxCommon, textureManager, size / 10.0f + 1.5f);
 		spherePlantD[i]->SetAngle(3.14f);
 	}

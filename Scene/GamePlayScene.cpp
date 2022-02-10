@@ -25,7 +25,7 @@ void GamePlayScene::Update()
 	opening->Update(map->GetPlayerPosition());
 
 	//開始時のフェードイン
-	if (Fade(120.0f, count))
+	if (Fade(120.0f, (float)count))
 	{
 		//Player操作待ちの間のUI
 		if (opening->isWait())
@@ -176,7 +176,7 @@ void GamePlayScene::Update()
 	{
 		gameTime = 0.1f;
 		//lerpCount以下でカウントする
-		lerpTime < lerpCount ? lerpTime++ : lerpTime = lerpCount;
+		lerpTime < lerpCount ? lerpTime++ : lerpTime = (int)lerpCount;
 	}
 #pragma region カメラ操作
 	//カメラシェイクの値加算

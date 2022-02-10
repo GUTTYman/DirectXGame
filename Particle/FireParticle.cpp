@@ -23,7 +23,7 @@ void FireParticle::Initialize(DirectXCommon* dxCommon, TextureManager* textureMa
 	{
 		object[i]->Initialize(dxCommon, textureManager);
 		//サイズをランダムで設定
-		float rs = rand() % 10 + 3;
+		float rs = float(rand() % 10 + 3);
 		object[i]->SetScale(Vector3(rs / 10, rs / 10, rs / 10));
 	}
 	red = false;
@@ -43,9 +43,9 @@ void FireParticle::Update(Vector3 p)
 		else
 		{
 			//サイズとポジション指定
-			float rs = rand() % 20 + 5;
+			float rs = float(rand() % 20 + 5);
 			object[i]->SetScale(Vector3(rs / 10, rs / 10, 0.1f));
-			float rnd = rand() % 40 - 20;
+			float rnd = float(rand() % 40 - 20);
 			object[i]->SetPosition(p + Vector3(0, rnd / 10, 0));
 		}
 	}

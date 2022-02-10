@@ -25,9 +25,9 @@ void ChargeParticle::Initialize(DirectXCommon* dxCommon, TextureManager* texture
 		object[i]->SetRotation(Vector3(0, 0, 45));
 		object[i]->SetLiveFlag(true);
 		//カラーをランダムでセット
-		float rR = rand() % 10;
-		float rG = rand() % 10;
-		float rB = rand() % 10;
+		float rR = float(rand() % 10);
+		float rG = float(rand() % 10);
+		float rB = float(rand() % 10);
 		object[i]->SetColor(Vector3(rR, rG, rB) / 10.0f);
 	}
 	a = 0;
@@ -48,8 +48,8 @@ void ChargeParticle::Update(Vector3 p)
 		else
 		{
 			//湧くポジションをランダムでセット	
-			float rx = rand() % 20 - 10;
-			float ry = rand() % 20 - 10;
+			float rx = float(rand() % 20 - 10);
+			float ry = float(rand() % 20 - 10);
 			Vector3 b = Vector3(rx, ry, 0);
 			object[i]->SetPosition(p + b);
 		}

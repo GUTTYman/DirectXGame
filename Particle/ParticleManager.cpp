@@ -21,7 +21,7 @@ void ParticleManager::Initialize(DirectXCommon* dxCommon, TextureManager* textur
 	for (int i = 0; i < object.size(); i++)
 	{
 		object[i]->Initialize(dxCommon, textureManager);
-		float b = 360 / size * i;
+		float b = 360.0f / size * i;
 		Vector3 a = Vector3(sin(b), cos(b), 0);
 		object[i]->SetVelocity(a);
 	}
@@ -39,7 +39,7 @@ void ParticleManager::Update(Vector3 p)
 		else
 		{
 			object[i]->SetPosition(p);
-			float b = 360 / size * i;
+			float b = 360.0f / size * i;
 			Vector3 a = Vector3(sin(b/2.0f), cos(b/2.0f), 0);
 			object[i]->SetVelocity(a);
 		}
