@@ -13,7 +13,7 @@ public:
 	RiseUI();
 	~RiseUI();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 };
 

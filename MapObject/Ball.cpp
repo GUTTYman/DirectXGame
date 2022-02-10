@@ -31,7 +31,7 @@ void Ball::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 	liveFlag = true;
 }
 
-void Ball::Update()
+void Ball::Update(float gameTime)
 {
 	alldead = true;
 	if (liveFlag)

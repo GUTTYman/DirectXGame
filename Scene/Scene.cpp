@@ -209,7 +209,7 @@ void Scene::MapLoad()
 	player->SetVelocity(Vector3());
 	player->PlayerReset();
 	player->SetPosition(map->GetPlayerPosition());
-	player->Update();
+	player->Update(1.0f);
 	//ゴール再配置
 	goal->SetPosition(map->GetGoalPosition());
 	//ボール再配置

@@ -30,8 +30,8 @@ public:
 	Player();
 	~Player();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
-	void Control();
+	void Update(float gameTime);
+	void Control(float gameTime);
 	void Draw(DirectXCommon*dxCommon)override;
 	
 	//Getter

@@ -20,7 +20,7 @@ public:
 	Tail();
 	~Tail();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon)override;
 	//Setter
 	inline void SetInput(Input* input) { this->input = input; }

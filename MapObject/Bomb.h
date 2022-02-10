@@ -13,7 +13,7 @@ private:
 	static std::vector<Player*> player;		//プレイヤー
 
 	float a;								//動きの値
-	int waitTime;							//鼓動の速さ
+	float waitTime;							//鼓動の速さ
 	bool emitte;							//パーティクルの放出フラグ
 	float pCount;								//パーティクルのカウント
 
@@ -21,7 +21,7 @@ public:
 	Bomb();
 	~Bomb();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon)override;
 	//Setter
 	static void SetPlayer(std::vector<Player*> p) { player = p; }

@@ -27,17 +27,17 @@ void TailManager::Initialize(DirectXCommon* dxCommon, TextureManager* textureMan
 	SetScale(Vector3(firstSize, firstSize, firstSize));
 }
 
-void TailManager::Update()
+void TailManager::Update(float gameTime)
 {
 	//ˆêŒÂ–Ú‚ÌƒIƒuƒWƒFƒNƒg‚Ì‚Ý”¼ŒaŽw’è
 	object[0]->SetRadius(0.1f);
-	object[0]->Update();
+	object[0]->Update(gameTime);
 	for (int i = 1; i < size; i++)
 	{
 		object[i]->SetTarget(object[i - 1]->GetPosition());
 		//A•¨‚Ì‹…“¯Žm‚ÌŠÔ‚Í”¼Œa•ªŠJ‚¯‚é
 		object[i]->SetRadius(object[i]->GetScale().x);
-		object[i]->Update();
+		object[i]->Update(gameTime);
 	}
 }
 

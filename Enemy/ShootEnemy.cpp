@@ -29,7 +29,7 @@ void ShootEnemy::Initialize(DirectXCommon* dxCommon, TextureManager* textureMana
 	cubeOBJ->SetColor(Vector3());
 	cubeOBJ->SetScale(Vector3(1, 1, 1));
 	//cube用カウント
-	cubeCount = 0;
+	cubeCount = 0.0f;
 
 	//目のオブジェクト
 	eye->Initialize(modelLoader->GetModel(EYE));
@@ -37,7 +37,7 @@ void ShootEnemy::Initialize(DirectXCommon* dxCommon, TextureManager* textureMana
 	eye->SetScale(scale);
 }
 
-void ShootEnemy::Update()
+void ShootEnemy::Update(float gameTime)
 {
 	if (liveFlag)
 	{
@@ -78,7 +78,7 @@ void ShootEnemy::Update()
 		
 		//反復移動繰り返し
 		velocity = Vector3(sin(a) * 0.1f, 0, 0);
-		position += velocity;
+		position += velocity * gameTime;
 		a += 0.01f;
 		//目のオブジェクト更新
 		eye->SetPosition(position);
@@ -91,22 +91,22 @@ void ShootEnemy::Update()
 			bullet->SetPosition(position);
 		}
 		//弾の更新
-		bullet->Update();
+		bullet->Update(gameTime);
 
 		//体の周りのオブジェクトUpdate
-		CubeOBJUpdate();
+		CubeOBJUpdate(gameTime);
 		//パーティクルのUpdate
 		fire->Update(position);
 #pragma endregion
 	}
 }
-void ShootEnemy::CubeOBJUpdate()
+void ShootEnemy::CubeOBJUpdate(float gameTime)
 {
-	cubeCount += 1;
+	cubeCount += 1.0f;
 	//体の周りをオブジェクトが回転している
 	cubeOBJ->SetPosition(position);
 	//ShootEnemyParticleGSで制御
-	cubeOBJ->SetTime(cubeCount);
+	cubeOBJ->SetTime((int)(cubeCount * gameTime));
 	cubeOBJ->Update();
 }
 void ShootEnemy::Draw(DirectXCommon* dxCommon)

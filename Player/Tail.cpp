@@ -22,7 +22,7 @@ void Tail::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 	liveFlag = true;
 }
 
-void Tail::Update()
+void Tail::Update(float gameTime)
 {
 	//liveFlag‚ªTrue‚ÌŠÔ‚Ì‚İXVˆ—‚ğ‚·‚é
 	if (liveFlag)
@@ -41,10 +41,9 @@ void Tail::Update()
 
 		//©‘R‚È—h‚ê
 		velocity.x += (sin(a) * 0.005f);
-		a += sinangle;
+		a += sinangle * gameTime;
 		//“®‚«‚ğŠp“x‚É‰ÁZ
 		nowangle += velocity.x;
-#pragma endregion
 #pragma endregion
 	}
 

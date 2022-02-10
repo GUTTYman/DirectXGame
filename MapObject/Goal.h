@@ -9,23 +9,23 @@ class Goal :
 {
 private:
 	std::unique_ptr < Object3d> object;
-
 	static  std::vector<Player*> player;		//プレイヤー
-
 	std::unique_ptr < ChargeParticle> particle;		//パーティクル
 
-	float a;	//ホバリングの位置（sinの角度）
-	bool goalFlag;	//シーン切り替えフラグ
-
+	float a;		//ホバリングの位置（sinの角度）
+	bool goal;	//ゴールしてからシーン切り替えまでのインターバルフラグ
+	int goalCount;	//ゴールしてからシーン切り替えまでのカウント
+	bool next;	//シーン切り替えフラグ
 public:
 	Goal();
 	~Goal();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon)override;
 	//Setter
 	static void SetPlayer(std::vector<Player*> p) { player = p; }
-	void SetGoalFlag(bool b) { goalFlag = b; }
+	void SetNextFlag(bool b) { next = b; }
 	//Getter
-	bool GetGoalFlag() { return goalFlag; }
+	bool GetNextFlag() { return next; }
+	bool GetGoalFlag() { return goal; }
 };

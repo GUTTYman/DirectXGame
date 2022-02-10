@@ -58,7 +58,7 @@ void ChargeParticle::Update(Vector3 p)
 			object[i]->SetLiveFlag(false);
 		}
 	}
-		//‡”Ô‚É‰Œ‚ğo‚·
+		//‡”Ô‚É—±q‚ğo‚·
 	if (a < object.size())
 	{
 		object[a]->SetLiveFlag(true);

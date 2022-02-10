@@ -24,7 +24,7 @@ public:
 	~Select();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager, ModelIndex m) ;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 	//Getter
 	inline bool GetIsRota() { return isRota; }

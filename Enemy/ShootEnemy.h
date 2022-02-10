@@ -13,7 +13,7 @@ private:
 	std::unique_ptr < Object3d> eye;
 
 	const static int cubesize = 10;
-	int cubeCount;//cubeOBJ用カウント変数
+	float cubeCount;//cubeOBJ用カウント変数
 	std::unique_ptr<GPUParticle> cubeOBJ;
 
 	static  std::vector<Player*> player;		//プレイヤー
@@ -27,8 +27,8 @@ public:
 	ShootEnemy();
 	~ShootEnemy();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
-	void CubeOBJUpdate();
+	void Update(float gameTime);
+	void CubeOBJUpdate(float gameTime);
 	void Draw(DirectXCommon* dxCommon)override;
 	//Getter
 	Bullet* GetBullet() { return bullet.get(); }

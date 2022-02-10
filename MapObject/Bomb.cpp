@@ -17,13 +17,13 @@ void Bomb::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 	scale = Vector3(r/10.0f,r / 10.0f,r / 10.0f);
 	color = Vector3();
 	a = 0.0f;
-	waitTime = 0;
+	waitTime = 0.0f;
 	liveFlag = true;
 	emitte = false;
 	pCount = 0;
 }
 
-void Bomb::Update()
+void Bomb::Update(float gameTime)
 {
 	if (liveFlag)
 	{
@@ -35,17 +35,17 @@ void Bomb::Update()
 			//スケールとカラーで鼓動を表現
 			scale += Vector3(sin(a) * range, sin(a) * range, sin(a) * range);
 			color += Vector3(sin(a) * range , 0.0f, 0.0f);
-			a += 0.3f;
+			a += 0.3f * gameTime;
 		}
 		else
 		{
-			waitTime++;
+			waitTime+=1.0f * gameTime;
 		}
 		//脈の間隔
 		if (waitTime > 60)
 		{
 			color = Vector3();
-			waitTime = 0;
+			waitTime = 0.0f;
 			a = 0.0f;
 		}
 		if (!emitte)
@@ -89,8 +89,8 @@ void Bomb::Update()
 		if (pCount < 120)
 		{
 			//ジオメトリシェーダーでフェースを飛ばす
-			pCount+=2.0f;
-			object->SetNormalLength(Vector3(pCount, pCount, 0));
+			pCount+=2.0f * gameTime;
+			object->SetNormalLength(Vector3(pCount, pCount, 0) * gameTime);
 			color = Vector3(0.5f, 0.0f, 0.0f);
 		}
 		else

@@ -24,7 +24,7 @@ void Cutter::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 
 }
 
-void Cutter::Update()
+void Cutter::Update(float gameTime)
 {
 
 	if (liveFlag)
@@ -39,7 +39,7 @@ void Cutter::Update()
 			}
 
 		}
-		rotation.z += 8;
+		rotation.z += 8 * gameTime;
 
 
 #pragma endregion

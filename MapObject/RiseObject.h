@@ -23,7 +23,7 @@ public:
 	RiseObject();
 	~RiseObject();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 
 	void PlayerRise(PlayerEmitter* p, int a,DirectXCommon* dxCommon, TextureManager* textureManager, UINT texNum);

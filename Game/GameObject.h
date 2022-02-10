@@ -32,7 +32,6 @@ public: // ƒƒ“ƒoŠÖ”
 	virtual ~GameObject();
 
 	virtual void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) = 0;
-	virtual void Update() = 0;
 	virtual void Draw(DirectXCommon* dxCommon) = 0;
 
 	//SetterEGetter

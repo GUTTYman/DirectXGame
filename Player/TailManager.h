@@ -14,7 +14,7 @@ public:
 	TailManager(int a);
 	~TailManager();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager,float firstSize);
-	void Update();
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon);
 	//Getter
 	inline Vector3 GetFirstTarget() { return object[0]->GetTarget(); }

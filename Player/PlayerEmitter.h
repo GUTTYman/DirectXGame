@@ -17,7 +17,7 @@ public:
 	PlayerEmitter();
 	~PlayerEmitter();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager);
-	void Update();
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon);
 	//1‘Ì‚¾‚¯c‚µ‚Ä‘¼‚ÍÁ‚·
 	void PlayerReset();

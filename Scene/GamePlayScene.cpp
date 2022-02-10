@@ -10,12 +10,17 @@ void GamePlayScene::Initialize()
 	opening->Initialize(dxCommon,textureManager);
 	//初期化したオブジェクトを一度だけ更新しておく
 	opening->Update(map->GetPlayerPosition());
+	
+	//倍速値
+	gameTime = 1.0f;
+	//カメラのラープ値
+	lerpTime = 0;
 
 }
 //ゲームプレイ中の更新
 void GamePlayScene::Update()
 {
-
+	
 	//開始時の演出の更新
 	opening->Update(map->GetPlayerPosition());
 
@@ -31,7 +36,7 @@ void GamePlayScene::Update()
 		if (opening->GetStep()==OpenStep::OFF|| opening->GetStep() == OpenStep::SPAWN)
 		{
 			//プレイヤー
-			player->Update();
+			player->Update(gameTime);
 			//シーンオブジェクト（UIなど）
 			sceneObject->PlayUpdate(player->TopPosition(), false);
 			//Playerが全部死んだらシーン切り替え
@@ -57,7 +62,7 @@ void GamePlayScene::Update()
 	ShootEnemy::SetPlayer(player->GetPleyer());
 	for (int i = 0; i < map->GetShootEnemy().size(); i++)
 	{
-		shootEnemy[i]->Update();
+		shootEnemy[i]->Update(gameTime);
 	}
 	//のれんオブジェクト
 	LinkObject::SetPlayer(player->GetPleyer());
@@ -106,13 +111,13 @@ void GamePlayScene::Update()
 	Bomb::SetPlayer(player->GetPleyer());
 	for (int i = 0; i < map->GetBomb().size(); i++)
 	{
-		bomb[i]->Update();
+		bomb[i]->Update(gameTime);
 	}
 	//草刈り機オブジェクト
 	Cutter::SetPlayer(player->GetPleyer());
 	for (int i = 0; i < map->GetCutter().size(); i++)
 	{
-		cutter[i]->Update();
+		cutter[i]->Update(gameTime);
 	}
 	//増殖オブジェクト
 	RiseObject::SetPlayer(player->GetPleyer());
@@ -130,12 +135,12 @@ void GamePlayScene::Update()
 	}
 	//ゴール
 	Goal::SetPlayer(player->GetPleyer());
-	goal->Update();
+	goal->Update(gameTime);
 	//ボール
 	Ball::SetPlayer(player->GetPleyer());
 	for (int i = 0; i < map->GetBall().size(); i++)
 	{
-		ball[i]->Update();
+		ball[i]->Update(gameTime);
 	}
 
 	//背景
@@ -164,22 +169,43 @@ void GamePlayScene::Update()
 	}
 	//操作説明の看板
 	sceneObject->BoradUpdate(Vector3(50, 0, 0), player->GetPleyer());
-
+	
+	//ゴールに触れたらスローになる
+	static float lerpCount = 20.0f;
+	if (goal->GetGoalFlag())
+	{
+		gameTime = 0.1f;
+		//lerpCount以下でカウントする
+		lerpTime < lerpCount ? lerpTime++ : lerpTime = lerpCount;
+	}
 #pragma region カメラ操作
 	//カメラシェイクの値加算
 	Vector3 cameraShake = Vector3();
+	//ボールが壁にぶつかったときの揺れをカメラに加算
 	for (int i = 0; i < ball.size(); i++)
 	{
 		cameraShake += ball[i]->GetCameraShake();
 	}
-	//開始演出時のカメラ演出
+	
+	//開始時演出が終わったら
 	if (opening->GetStep() == OpenStep::OFF || opening->GetStep() == OpenStep::SPAWN)
 	{
 		//Playerが生きている間カメラが追う
 		if (player->GetLiveFlag())
 		{
-			camera->SetEye(Vector3(player->PlayerCamera().x, -28.0f + cameraShake.y, -65.0f));
-			camera->SetTarget(Vector3(player->PlayerCamera().x, -28.0f + cameraShake.y, 0.0f));
+			//ゴールしてなければPlayerをカメラが追う
+			if (!goal->GetGoalFlag())
+			{
+				camera->SetEye(Vector3(player->PlayerCamera().x, -28.0f + cameraShake.y, -65.0f));
+				camera->SetTarget(Vector3(player->PlayerCamera().x, -28.0f + cameraShake.y, 0.0f));
+			}
+			else//ゴールしたらズームアップする
+			{
+				camera->SetEye(easeIn(Vector3(player->PlayerCamera().x, player->PlayerCamera().y,-65.0f),
+					Vector3(goal->GetPosition().x, goal->GetPosition().y,-20.0f),lerpTime/ lerpCount));
+				camera->SetTarget(easeIn(Vector3(player->PlayerCamera().x, player->PlayerCamera().y, 0.0f),
+					Vector3(goal->GetPosition().x, goal->GetPosition().y, 0.0f), lerpTime / lerpCount));
+			}
 		}
 	}
 	else
@@ -203,8 +229,13 @@ void GamePlayScene::OpeningUpdate()
 void GamePlayScene::ChangeMap()
 {
 	//ゴールしたら
-	if (goal->GetGoalFlag())
+	if (goal->GetNextFlag())
 	{
+		//倍速を元に戻す
+		gameTime = 1.0f;
+		lerpTime = 0;
+
+		//最後のマップなら
 		if (mapnum == map->GetMapCount() - 1)
 		{
 			scene = CLEAR_SCENE;
@@ -213,7 +244,7 @@ void GamePlayScene::ChangeMap()
 			select->ResetClear();
 
 		}
-		else
+		else//最後のマップ以外なら
 		{
 			count = 0;
 			//ステージ選択に移る
@@ -223,7 +254,7 @@ void GamePlayScene::ChangeMap()
 		}
 		//マップを読み込みゴールフラグをfalseにする
 		MapLoad();
-		goal->SetGoalFlag(false);
+		goal->SetNextFlag(false);
 	}
 }
 //ゲームプレイ中の描画

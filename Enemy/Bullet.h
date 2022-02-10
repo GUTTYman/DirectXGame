@@ -18,7 +18,7 @@ public:
 	Bullet();
 	~Bullet();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon)override;
 	//Getter
 	int GetTime() { return time; }

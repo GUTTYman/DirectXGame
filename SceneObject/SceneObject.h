@@ -38,7 +38,7 @@ public:
 	SceneObject();
 	~SceneObject();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 	//titleの頂点振動カウウントセット	
 	inline void SetCount(int a) { titleCount = a; }

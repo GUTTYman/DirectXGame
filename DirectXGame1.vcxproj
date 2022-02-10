@@ -142,7 +142,6 @@
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Scene\SelectScene.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
-    <ClCompile Include="Select\Result.cpp" />
     <ClCompile Include="Select\Select.cpp" />
     <ClCompile Include="Select\SelectManager.cpp" />
     <ClCompile Include="SpherePlant\SpherePlant.cpp" />
@@ -212,7 +211,6 @@
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Scene\SelectScene.h" />
     <ClInclude Include="Scene\TitleScene.h" />
-    <ClInclude Include="Select\Result.h" />
     <ClInclude Include="Select\Select.h" />
     <ClInclude Include="Select\SelectManager.h" />
     <ClInclude Include="SpherePlant\SpherePlant.h" />

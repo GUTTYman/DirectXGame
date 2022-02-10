@@ -15,7 +15,7 @@ public:
 	Back();
 	~Back();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 	void SelectUpdate();
 	void SelectDraw(DirectXCommon*dxCommon);

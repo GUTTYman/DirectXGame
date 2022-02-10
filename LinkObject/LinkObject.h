@@ -22,7 +22,7 @@ public:
 	LinkObject();
 	~LinkObject();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 
 	void SetInput(Input* input) { this->input = input; }

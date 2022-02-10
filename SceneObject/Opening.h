@@ -37,7 +37,7 @@ public:
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)override ;
 	void Update(Vector3 position);
 	void SpawnOBJUpdate(Vector3 position);
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 	void Reset();		//もう一度演出をセットする
 	//Getter

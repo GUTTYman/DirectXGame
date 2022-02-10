@@ -25,12 +25,12 @@ void PlayerEmitter::Initialize(DirectXCommon* dxCommon, TextureManager* textureM
 		object[0]->SetLiveFlag(true);
 }
 
-void PlayerEmitter::Update()
+void PlayerEmitter::Update(float gameTime)
 {
 	liveFlag = false;
 	for (int i = 0; i < object.size(); ++i)
 	{
-		object[i]->Update();
+		object[i]->Update(gameTime);
 		//ˆê‘Ì‚Å‚à¶‚«‚Ä‚½‚ç‘±s
 		if (object[i]->GetLiveFlag())
 		{

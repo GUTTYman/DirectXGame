@@ -106,9 +106,6 @@
     <ClCompile Include="BoundObject\BoundObjectManager.cpp">
       <Filter>ゲームオブジェクト\BoundObject</Filter>
     </ClCompile>
-    <ClCompile Include="Select\Result.cpp">
-      <Filter>ゲームオブジェクト\Select</Filter>
-    </ClCompile>
     <ClCompile Include="Select\SelectManager.cpp">
       <Filter>ゲームオブジェクト\Select</Filter>
     </ClCompile>
@@ -275,9 +272,6 @@
     </ClInclude>
     <ClInclude Include="BoundObject\BoundObjectManager.h">
       <Filter>ゲームオブジェクト\BoundObject</Filter>
-    </ClInclude>
-    <ClInclude Include="Select\Result.h">
-      <Filter>ゲームオブジェクト\Select</Filter>
     </ClInclude>
     <ClInclude Include="Select\Select.h">
       <Filter>ゲームオブジェクト\Select</Filter>

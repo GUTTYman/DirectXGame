@@ -20,7 +20,7 @@ public:
 	TileBlock();
 	~TileBlock();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 	//Setter
 	static void SetHitObject(std::vector<Player*> p, std::vector<Ball*>b, std::vector<ShootEnemy*>se);

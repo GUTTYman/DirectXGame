@@ -15,7 +15,7 @@ public:
 	Particle();
 	~Particle();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update();
 	void Draw(DirectXCommon* dxCommon)override;
 
 	static void StaticFinalize();

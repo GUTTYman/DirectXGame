@@ -16,7 +16,7 @@ public:
 	Cutter();
 	~Cutter();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager) override;
-	void Update()override;
+	void Update(float gameTime);
 	void Draw(DirectXCommon* dxCommon)override;
 
 	//Setter

@@ -29,13 +29,13 @@ void Player::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 	powerCount = 0.0f;
 }
 
-void Player::Update()
+void Player::Update(float gameTime)
 {
 	if (liveFlag)
 	{
 		tail->SetScale(scale);
 		//Player操作
-		Control();
+		Control(gameTime);
 
 		hitBlock = false;	//壁などにあったっていた場合ここより↑↑の行がtrue	↓↓の行がfalseとなる
 #pragma region 反発係数計算
@@ -48,16 +48,16 @@ void Player::Update()
 #pragma endregion
 
 		//体の向きをVelocityから求める
-		float direction = atan2f(velocity.y, velocity.x);
+		float direction = atan2f(velocity.y * gameTime, velocity.x * gameTime);
 		//しっぽ角度セット
 		tail->SetAngle(-direction - 1.57f);
-		if (velocity.x >= 0.0f)
+		if (velocity.x * gameTime >= 0.0f)
 		{
 			rotation = Vector3(0, 0, direction * 57.32484076433121f);
 		}
-		else if (velocity.x < 0.0f)
+		else if (velocity.x * gameTime < 0.0f)
 		{
-			rotation = Vector3(180, 0, atan2f(-velocity.y, velocity.x) * 57.32484076433121f);
+			rotation = Vector3(180, 0, atan2f(-velocity.y * gameTime, velocity.x * gameTime) * 57.32484076433121f);
 		}
 
 		//死んだら(60フレームの間)
@@ -73,11 +73,11 @@ void Player::Update()
 		}
 		else
 		{
-			position += velocity;
+			position += velocity * gameTime;
 			a = 0;
 		}
 		//ジオメトリシェーダーでフェースを散らせる
-		object->SetNormalLength(Vector3(a, a, 0));
+		object->SetNormalLength(Vector3(a, a, 0) * gameTime);
 		object->SetPosition(position);
 		object->SetRotation(rotation);
 		object->SetScale(scale);
@@ -86,12 +86,12 @@ void Player::Update()
 
 	//しっぽの更新
 	tail->SetTarget(position);
-	tail->Update();
+	tail->Update(gameTime);
 }
 
 
 
-void Player::Control()
+void Player::Control(float gameTime)
 {
 	//コントローラー操作
 	velocity.x += pad->GetLStickX() * 0.015f;
@@ -104,7 +104,7 @@ void Player::Control()
 	{
 		if (!hitBlock)
 		{
-			velocity.y -= 0.03f;
+			velocity.y -= 0.03f * gameTime;
 		}
 	}
 	//キーボード入力での左右移動

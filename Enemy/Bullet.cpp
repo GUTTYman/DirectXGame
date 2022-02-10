@@ -27,7 +27,7 @@ void Bullet::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 	time = 0;
 }
 
-void Bullet::Update()
+void Bullet::Update(float gameTime)
 {
 	if (liveFlag)
 	{
@@ -36,7 +36,7 @@ void Bullet::Update()
 		//”­ŽË‚³‚ê‚Ä‚©‚ç‚ÌƒJƒEƒ“ƒg
 		time++;
 #pragma endregion
-		position += velocity;
+		position += velocity * gameTime;
 		rotation.z = time * 3;
 	}
 	else

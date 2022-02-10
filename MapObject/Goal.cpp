@@ -18,11 +18,13 @@ void Goal::Initialize(DirectXCommon* dxCommon, TextureManager* textureManager)
 	color = Vector3(0.5f, 0.2f, 0.3f);
 	scale = Vector3(1, 1, 1);
 	a = 0.0f;
+	goalCount = 0;
 	liveFlag = true;
-	goalFlag = false;
+	next = false;
+	goal = false;
 }
 
-void Goal::Update()
+void Goal::Update(float gameTime)
 {
 	if (liveFlag)
 	{
@@ -31,41 +33,53 @@ void Goal::Update()
 		//ホバリングの幅
 		float range = 0.1f;
 		//動き
-		rotation.z += 1.0f;
-		rotation.x += 1.0f;
+		rotation += Vector3(1.0f,0.0f,1.0f) * gameTime;
 		//色の変動
 		color += Vector3(sin(a) * range * 2, sin(a) * range, sin(a) * range * 4);
 		//サイズの変動
 		scale += Vector3(sin(a) * range * 0.5f, sin(a) * range * 0.5f, sin(a) * range * 0.5f);
 		//ホバリングの速さ
-		a += 0.1f;
-
-		bool hit = false;
-		//プレイヤーとの当たり判定
-		for (int i = 0; i < player.size(); i++)
+		a += 0.1f * gameTime;
+		if (!goal)
 		{
-			if (SphereAndSphere(position, player[i]->GetPosition(), scale.x*2, 2, player[i]->GetLiveFlag(), liveFlag))
+			//プレイヤーとの当たり判定
+			for (int i = 0; i < player.size(); i++)
 			{
-				for (int i = 0; i < player.size(); i++)
+				if (SphereAndSphere(position, player[i]->GetPosition(), scale.x * 2, 2, player[i]->GetLiveFlag(), liveFlag))
 				{
-					player[i]->SetVelocity(Vector3());
+					for (int i = 0; i < player.size(); i++)
+					{
+						player[i]->SetVelocity(Vector3());
+					}
+					//音再生
+					GameObject::GetSoundManager()->PlayWave(AudioIndex::GOAL);
+					//ゴール起動
+					goal = true;
 				}
-				//音再生
-				GameObject::GetSoundManager()->PlayWave(AudioIndex::GOAL);
-				//ゴール起動
-				hit = true;
+			}
+			particle->Update(position);
+		}
+		//ゴールしてからシーン切り替えまでのインターバル
+		if (goal)
+		{
+			goalCount++;
+			//スケール変更(大→小)
+			scale = lerp(Vector3(5.0f, 5.0f, 5.0f), Vector3(), goalCount / 60.0f);
+
+			if (goalCount > 60)
+			{
+				next = true;
 			}
 		}
-		particle->Update(position);
-		//ゴールした時の演出
-		if (hit)
-		{
-			goalFlag = true;
-		}
-		//大きさ初期化
-		if (goalFlag)
+		
+
+		//値初期化
+		if (next)
 		{
 			a = 0.0f;
+			scale = Vector3(1, 1, 1);
+			goalCount = 0;
+			goal = false;
 		}
 
 #pragma endregion

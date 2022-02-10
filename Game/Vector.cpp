@@ -198,8 +198,15 @@ const Vector3 easeIn(const Vector3& start, const Vector3& end, float time)
 {
 	return start * (1.0f - time * time) + end * time * time;
 }
-
+const float easeIn(const float& start, const float& end, float time)
+{
+	return start * (1.0f - time * time) + end * time * time;
+}
 const Vector3 easeOut(const Vector3& start, const Vector3& end, float time)
+{
+	return start * (1.0f - time * (2.0f - time)) + end * time * (2.0f - time);
+}
+const float easeOut(const float& start, const float& end, float time)
 {
 	return start * (1.0f - time * (2.0f - time)) + end * time * (2.0f - time);
 }
