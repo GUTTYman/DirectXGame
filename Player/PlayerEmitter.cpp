@@ -137,12 +137,10 @@ void PlayerEmitter::SetVelocity(Vector3 velocity)
 void PlayerEmitter::PlayerReset()
 {
 	object[0]->SetLiveFlag(true);
-
 	for (int i = 1; i < object.size(); ++i)
 	{
 		object[i]->SetLiveFlag(false);
 	}
-
 }
 
 Vector3 PlayerEmitter::PlayerCamera()

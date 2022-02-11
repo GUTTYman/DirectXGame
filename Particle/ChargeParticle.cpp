@@ -35,7 +35,7 @@ void ChargeParticle::Initialize(DirectXCommon* dxCommon, TextureManager* texture
 	end = false;
 }
 
-void ChargeParticle::Update(Vector3 p)
+void ChargeParticle::Update(Vector3 p, float gameTime)
 {
 	for (int i = 0; i < object.size(); i++)
 	{
@@ -43,7 +43,7 @@ void ChargeParticle::Update(Vector3 p)
 		if (object[i]->GetLiveFlag())
 		{
 			Vector3 dir = p - object[i]->GetPosition();
-			object[i]->SetVelocity(dir / 10);
+			object[i]->SetVelocity((dir / 10) * gameTime);
 		}
 		else
 		{
@@ -53,7 +53,7 @@ void ChargeParticle::Update(Vector3 p)
 			Vector3 b = Vector3(rx, ry, 0);
 			object[i]->SetPosition(p + b);
 		}
-		if (object[i]->GetTime() > 10)
+		if (object[i]->GetTime() > int(10 / gameTime))
 		{
 			object[i]->SetLiveFlag(false);
 		}

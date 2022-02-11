@@ -57,8 +57,8 @@ void Goal::Update(float gameTime)
 					goal = true;
 				}
 			}
-			particle->Update(position);
 		}
+			particle->Update(position,gameTime);
 		//ゴールしてからシーン切り替えまでのインターバル
 		if (goal)
 		{

@@ -16,7 +16,7 @@ public:
 	ChargeParticle();
 	~ChargeParticle();
 	void Initialize(DirectXCommon* dxCommon, TextureManager* textureManager);
-	void Update(Vector3 p);
+	void Update(Vector3 p,float gameTime);
 	void Draw(DirectXCommon* dxCommon);
 
 	//Getter
